@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Home</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/abc/css/style.css">
+</head>
+<body>
+	<div class="pd-20">
+		<ul class="nav nav-pills nav-fill">
+		  <li class="nav-item">
+		    <a class="nav-link active" href="/profile">Profile</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Customers</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="/orders">Orders</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="/addBooks">Add Books</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="/addBooks">Book List</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="/logout">Logout</a>
+		  </li>
+		</ul>
+	</div>
+<div class="card-box mb-30">
+    <div class="pb-20">
+    <table class="table hover multiple-select-row data-table-export nowrap" id="table">
+        <tr>
+            <th>#</td>
+            <th>Book Name</td>
+            <th>Category</td>
+            <!-- <th>Author Id</td> -->
+            <th>Author Name</td>
+            <th>Total Page</td>
+            <th>Price</td>
+            <th>ISBN</td>
+            <th>Published Date</td>
+            <th>Rating</td>
+            <th>Description</td>
+                <!-- <th>Product Image</td> -->
+            <th>Action</td>
+        </tr>
+
+        <% for(var i=0; i< userlist.length; i++ ){ %>
+        <tr>
+            <td><%= userlist[i].id %></td>
+            <td><%= userlist[i].title %></td>
+            <td><%= userlist[i].category %></td>
+            <td><%= userlist[i].authorName %></td>
+            <td><%= userlist[i].totalPages %></td>
+            <td><%= userlist[i].price %></td>
+            <td><%= userlist[i].isbn %></td>
+            <td><%= userlist[i].publishedDate %></td>
+            <td><%= userlist[i].rating %></td>
+            <td><%= userlist[i].description %></td>
+                <!-- <td><%= userlist[i].productImage %></td> -->
+            <td>
+                    <a href="">Edit</a><br>
+                    <a href="">Delete</a>
+            </td>
+        </tr>
+        <% } %>
+        </table>
+    </div>	
+</div>	
+</body>
+</html>			 

@@ -29,7 +29,8 @@ router.post('/', (req, res)=>{
 			req.session.username=results[0].username;
 			req.session.idd = results[0].id;
 			req.session.pass = results[0].password;
-			if(user.type=="admin") res.redirect('/home');
+			if(user.type=="admin") 
+				res.redirect('/home');
 			else res.redirect('/user');
 		}else{
 			res.redirect('/login');

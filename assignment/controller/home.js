@@ -32,6 +32,13 @@ router.get('/addBooks',(req,res)=>{
 		res.redirect('/login');
 	}
 })
+router.get('/bookList',(req,res)=>{
+	if(req.cookies['uname'] != null){
+		res.render('home/bookList');
+	}else{
+		res.redirect('/login');
+	}
+})
 router.get('/userlist', (req, res)=>{
 
 	userModel.getAll(function(results){
