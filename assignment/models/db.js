@@ -6,7 +6,7 @@ function getConnection(callback){
 	  host     : '127.0.0.1',
 	  user     : 'root',
 	  password : '',
-	  database : 'onlineBookStore'
+	  database : 'onlinebookstore'
 	});
 	 
 	connection.connect(function(err) {
@@ -26,7 +26,6 @@ module.exports = {
 			connection.query(sql, function (error, results) { 
 				callback(results);
 			});
-
 			connection.end(function(err) {
 				console.log('connection closed!');	  
 			});

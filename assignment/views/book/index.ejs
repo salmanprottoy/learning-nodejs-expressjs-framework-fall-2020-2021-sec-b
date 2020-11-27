@@ -1,0 +1,43 @@
+<%- include('../partial/user.ejs')%>
+
+<div class="card-box mb-30">
+    <div class="pb-20">
+    <table class="table hover multiple-select-row data-table-export nowrap" id="table">
+        <tr>
+            <th>#</td>
+            <th>Book Name</td>
+            <th>Category</td>
+            <!-- <th>Author Id</td> -->
+            <th>Author Name</td>
+            <th>Total Page</td>
+            <th>Price</td>
+            <th>ISBN</td>
+            <th>Published Date</td>
+            <th>Rating</td>
+            <th>Description</td>
+                <!-- <th>Product Image</td> -->
+            <th>Action</td>
+        </tr>
+
+        <% for(var i=0; i< userlist.length; i++ ){ %>
+        <tr>
+            <td><%= userlist[i].id %></td>
+            <td><%= userlist[i].title %></td>
+            <td><%= userlist[i].category %></td>
+            <td><%= userlist[i].authorName %></td>
+            <td><%= userlist[i].totalPages %></td>
+            <td><%= userlist[i].price %></td>
+            <td><%= userlist[i].isbn %></td>
+            <td><%= userlist[i].publishedDate %></td>
+            <td><%= userlist[i].rating %></td>
+            <td><%= userlist[i].description %></td>
+                <!-- <td><%= userlist[i].productImage %></td> -->
+            <td>
+                    <!-- <a href="../accountingSellsHome/product/edit/<%=userlist[i].id%>">Edit</a><br>
+                    <a href="../accountingSellsHome/product/delete/<%=userlist[i].id%>">Delete</a> -->
+            </td>
+        </tr>
+        <% } %>
+        </table>
+    </div>	
+</div>				 

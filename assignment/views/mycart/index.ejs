@@ -1,0 +1,19 @@
+<%- include('../partial/user.ejs')%>
+<table class="table table-dark" >
+    <tr>
+      <td>Username</td>
+      <td>Book ID</td>
+      <td>Total Amount</td>
+    </tr>
+
+    <% for(var i=0; i< userlist.length; i++ ){ %>
+    <tr>
+      <td ><%= userlist[i].username %></td>
+      <td ><%= userlist[i].bookid %></td>
+      <td ><%= userlist[i].totalAmount %></td>
+    </tr>
+    <% } %>
+  </table>
+  <div >
+  <a href="#" class="btn btn-success">Place Order</a>
+  </div>

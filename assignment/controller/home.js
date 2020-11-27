@@ -4,63 +4,40 @@ const router 	= express.Router();
 
 router.get('/', (req, res)=>{
 	
-	/* if(req.cookies['uname'] != null){
+	if(req.cookies['uname'] != null){
 		res.render('home/index');
 	}else{
 		res.redirect('/login');
-    } */
-    res.render('home/index');
+	}
+})
+router.get('/profile',(req,res)=>{
+	if(req.cookies['uname'] != null){
+		res.render('home/profile');
+	}else{
+		res.redirect('/login');
+	}
 })
 
-router.get('/about', (req, res)=>{
-
-	userModel.getAll(function(results){
-		res.render('home/about', {userlist: results});
-	});
-
+router.get('/orders',(req,res)=>{
+	if(req.cookies['uname'] != null){
+		res.render('home/orders');
+	}else{
+		res.redirect('/login');
+	}
 })
-
-router.get('/books', (req, res)=>{
-
-	userModel.getAll(function(results){
-		res.render('home/books', {userlist: results});
-	});
-
+router.get('/addBooks',(req,res)=>{
+	if(req.cookies['uname'] != null){
+		res.render('home/addBooks');
+	}else{
+		res.redirect('/login');
+	}
 })
-
-router.get('/library', (req, res)=>{
-
-	userModel.getAll(function(results){
-		res.render('home/library', {userlist: results});
-	});
-
-})
-
-router.get('/contact', (req, res)=>{
+router.get('/userlist', (req, res)=>{
 
 	userModel.getAll(function(results){
-		res.render('home/contact', {userlist: results});
-	});
-
-})
-
-router.get('/login', (req, res)=>{
-
-	userModel.getAll(function(results){
-		res.render('home/login', {userlist: results});
-	});
-
-})
-
-
-router.get('/signup', (req, res)=>{
-
-	userModel.getAll(function(results){
-		res.render('home/signup', {userlist: results});
+		res.render('home/userlist', {userlist: results});
 	});
 
 });
-
-
 
 module.exports = router;
