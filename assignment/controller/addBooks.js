@@ -3,7 +3,7 @@ const bookModel = require.main.require('./models/bookModel');
 const cartsModel = require.main.require('./models/cartsModel');
 const router 	= express.Router();
 
-router.get('/', (req, res)=>{
+router.get('/addBooks', (req, res)=>{
 	
 	if(req.cookies['uname'] != null){
 		bookModel.getAll(function(results){

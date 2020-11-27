@@ -13,6 +13,7 @@ const logout		= require('./controller/logout');
 const dash  		= require('./controller/dash');
 const cart  		= require('./controller/cart');
 const book		= require('./controller/book');
+const addBooks		= require('./controller/addBooks');
 const fastcsv 		= require("fast-csv");
 const fs 			= require("fs");
 const app 			= express();
@@ -36,6 +37,7 @@ app.use('/home', home);
 app.use('/logout', logout);
 app.use('/user', user);
 app.use('/book', book);
+app.use('/addBooks', addBooks);
 
 
 //route
